@@ -1,0 +1,19 @@
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 600;
+    font-size: 18px;
+    color: var(--text);
+    cursor: pointer;
+  }
+  
+  .logo svg {
+    display: block;
+  }
+  
+  .logo-text {
+    color: var(--text);
+    transition: color .35s ease;
+  }
+  

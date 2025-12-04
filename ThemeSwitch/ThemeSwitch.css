@@ -1,0 +1,98 @@
+.theme-switch {
+    width: 150px;
+    height: 50px;
+    border-radius: 25px;
+    border: 2px solid #000;
+    background: linear-gradient(135deg, #9cd8ff, #6fc7ff);
+  
+    display: flex;
+    align-items: center;
+    position: relative;
+    cursor: pointer;
+    overflow: hidden;
+  
+    transition: background 0.4s ease, border-color 0.4s ease;
+  }
+  
+  .theme-switch.dark-mode {
+    background: linear-gradient(135deg, #2a2a2a, #1a1a1a);
+    border-color: #fff;
+  }
+  
+  /* Бегунок */
+  .switch-icon {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    background: #fff;
+  
+    position: absolute;
+    left: 4px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 5;
+  
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+  
+    transition: transform 0.35s cubic-bezier(.22,1.61,.36,1);
+  }
+  
+  .theme-switch.dark-mode .switch-icon {
+    transform: translate(96px, -50%);
+  }
+  
+  /* Тексты */
+  .switch-text-day,
+  .switch-text-night {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    font-weight: 700;
+    color: #fff;
+    font-size: 18px;
+    pointer-events: none;
+    opacity: 1;
+    transition: opacity 0.3s ease;
+  }
+  
+  .switch-text-day {
+    left: 43%;
+  }
+  
+  .switch-text-night {
+    left: 57%;
+  }
+  
+  .theme-switch.dark-mode .switch-text-day {
+    opacity: 0;
+  }
+  
+  .theme-switch:not(.dark-mode) .switch-text-night {
+    opacity: 0;
+  }
+  
+  /* MOBILE FIX */
+  @media (max-width: 480px) {
+    .theme-switch {
+      width: 130px;
+      height: 44px;
+    }
+  
+    .switch-icon {
+      width: 36px;
+      height: 36px;
+    }
+  
+    .theme-switch.dark-mode .switch-icon {
+      transform: translate(82px, -50%);
+    }
+  
+    .switch-text-day,
+    .switch-text-night {
+      font-size: 16px;
+    }
+  }
+  
